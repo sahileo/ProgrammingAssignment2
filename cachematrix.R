@@ -1,5 +1,4 @@
 ## COURSERA: R Programming_Week3_Assignment
-## Author: Sahil 
 
 ## Assignment Name: Caching the inverse of a matrix
 ## Assignment Gist: Matrix inversion is usually a costly computation and there maybe some benefit to caching the
@@ -8,10 +7,10 @@
 ## Computing the inverse of a square matrix can be done with solve function. If 'x' is a square invertible matrix then 'solve(x)' returns its inverse.
 
 ##Example:
-##testmatrix1 <- makeCacheMatrix(matrix(c(1,1,2,4),nrow=2,ncol=2))  #New 2*2 matrix
+##testmatrix1 <- makeCacheMatrix(matrix(c(1,1,2,4),nrow=2,ncol=2))  #New matrix
 ##testmatrix1$get()  #Returns matrix result
 ##testmatrix1$getinverse()  #Returns NULL
-##testmatrix1$set(matrix(1:4,2,2)) #New 2*2 matrix
+##testmatrix1$set(matrix(1:4,2,2)) #New matrix
 ##testmatrix1$get() #Returns matrix result
 ##cacheSolve(testmatrix1) #Inverse of matrix
 ##testmatrix1$getinverse() #Inverse of matrix
@@ -19,7 +18,8 @@
 ##Function1: makeCacheMatrix:  
 ## creates a special matrix object that can cache its inverse.
 ## makeCachematrix function is used to create a matrix.
-## setInverse sets the inversed matrix. getInverse returns the inversed matrix. 
+## Set sets the value of the matrix. get returns the value of the matrix. 
+## setInverse sets the value of the inversed matrix. getInverse returns the value of the inversed matrix. 
 
 makeCacheMatrix <- function(x = matrix()) {
   m <- NULL
@@ -40,7 +40,7 @@ makeCacheMatrix <- function(x = matrix()) {
 
 ## Function 2: cacheSolve:
 ## cacheSolve function calculates the inverse of the matirx. 
-## If the inverse has been calculated, then cacheSolve function retrieves the inverse from the cache. 
+## If the inverse has been calculated, then cacheSolve function retrieves the inverse from the cache instead of calculating. 
 ## x$getInverse gets the inverse result and if not caluclated will be null. x$setInverse sets the result to the object which is returned. 
 
 cacheSolve <- function(x, ...) {
